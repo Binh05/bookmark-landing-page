@@ -1,0 +1,29 @@
+.accordion {
+    max-width: 36rem;
+    margin-inline: auto;
+
+    &__item {
+        overflow: hidden;
+        max-height: 5.2rem;
+        border-block-start: .05rem solid $color-blue;
+        &:last-child {
+            border-block-end: .05rem solid $color-blue;
+            margin-block-end: 5rem;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-block: 2rem;
+
+        &:hover {
+            @include hover-text;
+        }
+    }
+
+    &__panel {
+        line-height: 5;
+    }
+}

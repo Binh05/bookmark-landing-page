@@ -1,0 +1,27 @@
+.site-header {
+    margin-inline: 11rem;
+    margin-block: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav, .nav__list {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.nav__item a {
+    color: $color-blue;
+    text-transform: uppercase;
+    font-weight: $weight-500;
+
+    &:hover {
+        @include hover-text;
+    }
+}
+
+.menu, .close, .logo--mobile, .social {
+    display: none;
+}

@@ -1,0 +1,134 @@
+.intro {
+    display: flex;
+    justify-content: space-between;
+
+    &__content {
+        padding-inline-start: $padding-left;
+        padding-inline-end: 4rem;
+        padding-block-start: 4%;
+        display: flex;
+        flex-direction: column;
+
+        .btn {
+            font-size: $font-size-base;
+            font-weight: $weight-500;
+            margin-inline-end: .7rem;
+
+            &--firefox {
+                background-color: $color-grey;
+                border-color: $color-grey;
+                color: $color-blue;
+
+                &:hover {
+                    border-color: $color-blue;
+                    color: $color-blue;
+                }
+            }
+        }
+    }
+
+    &__title {
+        color: $color-blue;
+        font-size: 3rem;
+        margin-block-end: 2rem;
+        font-weight: $weight-500;
+    }
+
+    &__text {
+        color: $color-blue;
+        line-height: 1.6rem;
+        margin-block-end: 2rem;
+    }
+
+    &__img {
+        margin-inline-end: 4rem;
+        position: relative;
+
+        &::before {
+            @include under-background(rtl);
+        }
+    }
+}
+
+.features {
+    text-align: center;
+    padding-block: 10rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include desc;
+    }
+
+    &-tabs {
+        margin-block-end: 6rem;
+        padding-block: 2.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 8rem;
+        margin-inline: auto;
+        max-width: 50rem;
+        border-block-end: .1rem solid $color-blue;
+        transform: translateX(-3%);
+    }
+
+    &__tab {
+        color: $color-blue;
+        font-weight: $weight-500;
+        font-size: 1.2rem;
+
+        &--active {
+            position: relative;
+            font-weight: bold;
+            &::after {
+                content: '';
+                width: 155%;
+                height: .3rem;
+                background-color: $color-secondary;
+                position: absolute;
+                left: 50%;
+                bottom: -2.65rem;
+                transform: translateX(-50%);
+            }
+        }
+
+        &:hover {
+            @include hover-text;
+        }
+    }
+    &__content {
+        display: flex;
+    }
+}
+
+.download {
+    text-align: center;
+    margin-block-start: 1.5rem;
+
+    &__title {
+        @include title;
+    }
+
+    &__desc {
+        @include desc;
+    }
+}
+
+.faq {
+    margin-block-start: 10rem;
+    text-align: center;
+
+    &__title {
+        @include title;
+    }
+
+    &__desc {
+        @include desc;
+        max-width: 32rem;
+    }
+}
