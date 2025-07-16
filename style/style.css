@@ -31,6 +31,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-block-end: 1rem;
 }
 
 .nav, .nav__list {
@@ -209,6 +210,7 @@ a {
   padding-block-start: 4%;
   display: flex;
   flex-direction: column;
+  max-width: 46vw;
 }
 .intro__content .btn {
   font-size: 1.125rem;
@@ -231,9 +233,12 @@ a {
   font-weight: 500;
 }
 .intro__text {
-  color: hsl(229, 31%, 21%);
-  line-height: 1.6rem;
-  margin-block-end: 2rem;
+  max-width: 34rem;
+  margin-inline: auto;
+  color: #CCC;
+  font-weight: 400;
+  margin-block-end: 3rem;
+  line-height: 1.6;
 }
 .intro__img {
   position: relative;
@@ -267,7 +272,7 @@ a {
 .features__text {
   max-width: 34rem;
   margin-inline: auto;
-  color: hsl(229, 31%, 21%);
+  color: #CCC;
   font-weight: 400;
   margin-block-end: 3rem;
   line-height: 1.6;
@@ -310,7 +315,6 @@ a {
 .features__content {
   display: flex;
   padding-inline-start: 10.5rem;
-  gap: 4.6rem;
 }
 
 .download {
@@ -326,7 +330,7 @@ a {
 .download__desc {
   max-width: 34rem;
   margin-inline: auto;
-  color: hsl(229, 31%, 21%);
+  color: #CCC;
   font-weight: 400;
   margin-block-end: 3rem;
   line-height: 1.6;
@@ -345,7 +349,7 @@ a {
 .faq__desc {
   max-width: 34rem;
   margin-inline: auto;
-  color: hsl(229, 31%, 21%);
+  color: #CCC;
   font-weight: 400;
   margin-block-end: 3rem;
   line-height: 1.6;
@@ -444,6 +448,11 @@ button {
   width: 100%;
   gap: 8rem;
   margin-inline: auto;
+  display: none;
+}
+.feature-card--active {
+  display: flex;
+  animation: opacity 2s ease-in-out forwards;
 }
 .feature-card__image {
   position: relative;
@@ -476,12 +485,28 @@ button {
   text-align: left;
   margin-block: 2rem;
   padding-inline-end: 10rem;
-  color: hsl(229, 31%, 21%);
+  color: #CCC;
   font-weight: 400;
   line-height: 1.6;
   max-width: 37rem;
 }
 
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes unvisible {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 @media (max-width: 50rem) {
   .features__content {
     padding-inline: 2.3rem;
@@ -501,27 +526,40 @@ button {
 .accordion {
   max-width: 36rem;
   margin-inline: auto;
+  margin-block-end: 5rem;
 }
 .accordion__item {
-  overflow: hidden;
-  max-height: 5.2rem;
-  border-block-start: 0.05rem solid hsl(229, 31%, 21%);
-}
-.accordion__item:last-child {
-  border-block-end: 0.05rem solid hsl(229, 31%, 21%);
-  margin-block-end: 5rem;
+  padding-block: 2rem;
+  border-block: 0.05rem solid hsla(229, 31%, 21%, 0.2);
 }
 .accordion__btn {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding-block: 2rem;
+  -webkit-tap-highlight-color: transparent;
 }
 .accordion__btn:hover {
   color: hsl(0, 94%, 66%);
 }
+.accordion__bottom {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
 .accordion__panel {
-  line-height: 5;
+  line-height: 2;
+  padding-block-start: 1rem;
+  text-align: left;
+  color: #CCC;
+}
+
+.toggle-icon {
+  stroke: #5267DF;
+  transition: transform 0.3s ease;
+}
+.toggle-icon--active {
+  stroke: hsl(0, 94%, 66%);
+  transform: rotate(180deg);
 }
 
 .extensions {
@@ -551,7 +589,7 @@ button {
 .extension__version {
   max-width: 34rem;
   margin-inline: auto;
-  color: hsl(229, 31%, 21%);
+  color: #CCC;
   font-weight: 400;
   margin-block-end: 3rem;
   line-height: 1.6;
@@ -585,7 +623,7 @@ button {
   margin-block-end: 3rem;
 }
 
-input[type=email] {
+.email {
   width: 100%;
   height: 3.5rem;
   padding-inline-start: 1rem;
@@ -603,7 +641,7 @@ input[type=email] {
   width: 100%;
 }
 .form__btn {
-  width: 100%;
+  width: 50%;
 }
 .form__error-icon {
   position: absolute;
@@ -620,13 +658,18 @@ input[type=email] {
   display: none;
 }
 
-.is-valid.form__input {
+@media (max-width: 50rem) {
+  .form__btn {
+    width: 100%;
+  }
+}
+.is-valid .form__input-group {
   background-color: hsl(0, 94%, 66%);
 }
 
-.is-valid.form__error-icon {
+.is-valid .form__error-icon {
   display: block;
 }
-.is-valid.form__error-msg {
+.is-valid .form__error-msg {
   display: block;
 }/*# sourceMappingURL=style.css.map */

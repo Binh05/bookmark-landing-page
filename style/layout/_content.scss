@@ -7,6 +7,7 @@
         padding-block-start: 4%;
         display: flex;
         flex-direction: column;
+        max-width: 46vw;
 
         .btn {
             font-size: $font-size-base;
@@ -34,9 +35,7 @@
     }
 
     &__text {
-        color: $color-blue;
-        line-height: 1.6rem;
-        margin-block-end: 2rem;
+        @include desc;
     }
 
     &__img {
@@ -104,7 +103,6 @@
     &__content {
         display: flex;
         padding-inline-start: $padding-left;
-        gap: $padding-mobile * 2;
     }
 }
 

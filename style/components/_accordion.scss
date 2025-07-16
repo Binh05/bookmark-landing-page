@@ -1,29 +1,44 @@
 .accordion {
     max-width: 36rem;
     margin-inline: auto;
+    margin-block-end: 5rem;
 
     &__item {
-        overflow: hidden;
-        max-height: 5.2rem;
-        border-block-start: .05rem solid $color-blue;
-        &:last-child {
-            border-block-end: .05rem solid $color-blue;
-            margin-block-end: 5rem;
-        }
+        padding-block: 2rem;
+        border-block: $hr;
     }
 
     &__btn {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        padding-block: 2rem;
+        -webkit-tap-highlight-color: transparent;
 
         &:hover {
             @include hover-text;
         }
     }
 
+    &__bottom {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .3s ease;
+    }
+
     &__panel {
-        line-height: 5;
+        line-height: 2;
+        padding-block-start: 1rem;
+        text-align: left;
+        color: $color-para;
+    }
+}
+
+.toggle-icon {
+    stroke: $color-arrow;
+    transition: transform .3s ease;
+
+    &--active {
+        stroke: $color-secondary;
+        transform: rotate(180deg);
     }
 }
