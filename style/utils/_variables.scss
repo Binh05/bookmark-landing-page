@@ -5,6 +5,8 @@ $color-grey: hsl(0, 0%, 97%);
 $color-blue: hsl(229, 31%, 21%);
 
 $color-shadow: hsla(229, 31%, 21%, 20%);
+$color-menu: hsla(229, 31%, 21%, 90%);
+$color-accordion: hsla(0, 0%, 97%, 30%);
 
 $font-size-base: 1.125rem;
 $font-size-2: 2rem;
@@ -15,3 +17,7 @@ $weight-400: 400;
 $weight-500: 500;
 
 $padding-left: 10.5rem;
+$padding-mobile: 2.3rem;
+
+$hr: .05rem solid $color-shadow;
+$hr-menu: .05rem solid $color-accordion;

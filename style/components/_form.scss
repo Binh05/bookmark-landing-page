@@ -1,5 +1,6 @@
 .cta__form {
-    width: 30rem;
+    width: 100%;
+    max-width: 30rem;
     margin-inline: auto;
     margin-block-end: 3rem;
 }
@@ -12,37 +13,43 @@ input[type="email"] {
     border: 0;
 }
 
-.form__input {
-    position: relative;
+.form {
+    &__input {
+        position: relative;
 
-    &-group {
-        background-color: transparent;
-        padding: .1rem;
-        border-radius: .3rem;
-        width: 50%;
+        &-group {
+            background-color: transparent;
+            padding: .1rem;
+            border-radius: .3rem;
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+    }
+
+    &__error {
+        &-icon {
+            position: absolute;
+            top: 32.5%;
+            right: 1rem;
+            display: none;
+        }
+
+        &-msg {
+            font-size: .8rem;
+            color: $color-grey;
+            text-align: left;
+            margin-inline-start: .7rem;
+            margin-block: .5rem;
+            display: none;
+        }
     }
 }
 
 .is-valid.form__input {
     background-color: $color-secondary;
-}
-
-.form__error {
-    &-icon {
-        position: absolute;
-        top: 32.5%;
-        right: 1rem;
-        display: none;
-    }
-
-    &-msg {
-        font-size: .8rem;
-        color: $color-grey;
-        text-align: left;
-        margin-inline-start: .7rem;
-        margin-block: .5rem;
-        display: none;
-    }
 }
 
 .is-valid.form__error {

@@ -4,7 +4,6 @@
 
     &__content {
         padding-inline-start: $padding-left;
-        padding-inline-end: 4rem;
         padding-block-start: 4%;
         display: flex;
         flex-direction: column;
@@ -41,7 +40,6 @@
     }
 
     &__img {
-        margin-inline-end: 4rem;
         position: relative;
 
         &::before {
@@ -63,24 +61,25 @@
 
     &__text {
         @include desc;
+        max-width: 36rem;
     }
 
     &-tabs {
         margin-block-end: 6rem;
+        margin-inline: auto;
         padding-block: 2.5rem;
         display: flex;
         justify-content: center;
         gap: 8rem;
-        margin-inline: auto;
         max-width: 50rem;
-        border-block-end: .1rem solid $color-blue;
-        transform: translateX(-3%);
+        border-block-end: $hr;
     }
 
     &__tab {
         color: $color-blue;
         font-weight: $weight-500;
         font-size: 1.2rem;
+        -webkit-tap-highlight-color: transparent;
 
         &--active {
             position: relative;
@@ -94,6 +93,7 @@
                 left: 50%;
                 bottom: -2.65rem;
                 transform: translateX(-50%);
+                animation: scale .3s ease-in-out;
             }
         }
 
@@ -103,6 +103,8 @@
     }
     &__content {
         display: flex;
+        padding-inline-start: $padding-left;
+        gap: $padding-mobile * 2;
     }
 }
 
@@ -130,5 +132,63 @@
     &__desc {
         @include desc;
         max-width: 32rem;
+    }
+}
+
+@media (max-width: 50rem) {
+    .site-header, .features__control, .download, .faq, .cta {
+        padding-inline: $padding-mobile;
+    }
+    
+    .intro {
+        flex-direction: column-reverse;
+
+        &__content {
+            padding-inline: 0;
+            text-align: center;
+        }
+
+        &__title, &__text {
+            text-align: center;
+        }
+
+        &__img {
+            margin-block-end: 5rem;
+        }
+    }
+
+    .features {
+        &-tabs {
+            flex-direction: column;
+            gap: 0;
+            padding: 0;
+        }
+
+        &__tab{
+            border-block-start: $hr;
+            padding-block: 2rem;
+
+            &--active {
+                &::after {
+                    width: 25%;
+                    bottom: -.1rem;
+                }
+            }
+        }
+    }
+
+    .feature-card {
+        flex-direction: column;
+    }
+}
+
+@keyframes scale {
+    from {
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+    }
+    to {
+        left: 50%;
+        transform: translateX(-50%) scale(1);
     }
 }

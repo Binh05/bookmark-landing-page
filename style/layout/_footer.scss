@@ -63,9 +63,49 @@
         display: flex;
         align-items: center;
         gap: 2.5rem;
+    }
 
-        & a img:hover {
-            color: $color-secondary;
+    &__text {
+        &:hover {
+            @include hover-text;
+        }
+    }
+}
+
+.icon-svg {
+    color: $color-grey;
+
+    svg {
+        fill: currentColor;
+    }
+
+    &:hover {
+        color: $color-secondary;
+    }
+}
+
+@media (max-width: 50rem) {
+    .cta__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 10rem;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        &__inner {
+            flex-direction: column;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            margin-block-end: 4rem;
+        }
+
+        &__text {
+            color: $color-grey;
         }
     }
 }

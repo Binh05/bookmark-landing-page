@@ -41,3 +41,15 @@
         margin-block-start: 5rem;
     }
 }
+
+@media (max-width: 50rem) {
+    .extensions {
+        flex-direction: column;
+    }
+
+    .extension {
+        &-enter, &-left {
+            margin-block-start: 0;
+        }
+    }
+}
