@@ -42,7 +42,20 @@
     }
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 68rem) and (min-width: $media) {
+    .extensions {
+        flex-wrap: wrap;
+        margin-inline: 5rem;
+    }
+
+    .extension {
+        &-enter, &-left {
+            margin-block-start: 0;
+        }
+    }
+}
+
+@media (max-width: $media) {
     .extensions {
         flex-direction: column;
     }

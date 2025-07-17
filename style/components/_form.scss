@@ -48,7 +48,7 @@
     }
 }
 
-@media (max-width: 50rem) {
+@media (max-width: $media) {
     .form__btn {
         width: 100%;
     }

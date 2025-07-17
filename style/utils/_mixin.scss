@@ -19,17 +19,21 @@
 @mixin under-background($direction) {
     content: '';
     width: 80%;
-    height: 80%;
+    height: 90%;
     position: absolute;
     bottom: -8%;
     background-color: $color-primary;
-    border-block-start: 50%;
     z-index: -1;
 
     @if $direction == ltr {
         border-end-end-radius: 35%;
-        width: 40.5vw;
-        left: -11vw;
+        border-start-end-radius: 100%;
+        width: 110%;
+        left:  -$padding-left;
+        @media (max-width: $media) {
+            left: -$padding-mobile;
+            width: 90%;
+        }
     }
     @else {
         border-end-start-radius: 35%;

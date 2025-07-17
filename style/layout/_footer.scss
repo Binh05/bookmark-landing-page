@@ -84,7 +84,7 @@
     }
 }
 
-@media (max-width: 50rem) {
+@media (max-width: $media) {
     .cta__form {
         display: flex;
         flex-direction: column;
