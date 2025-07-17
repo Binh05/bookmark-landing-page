@@ -1,14 +1,14 @@
 const menuBtn = document.querySelector('.menu')
-const menuOpen = document.querySelector('.nav')
+const menuOpen = document.querySelector('.nav-header')
 const closeBtn = document.querySelector('.close')
 
 menuBtn.addEventListener('click', () => {
-    menuOpen.classList.add('nav__open')
+    menuOpen.classList.add('nav-header__open')
     menuBtn.style.display = 'none'
 })
 
 closeBtn.addEventListener('click', () => {
-    menuOpen.classList.remove('nav__open')
+    menuOpen.classList.remove('nav-header__open')
     menuBtn.style.display = 'block'
 })
 
@@ -66,12 +66,11 @@ acdContainer.addEventListener('click', (e) => {
 // form valid
 
 const form = document.querySelector('.cta__form')
-const submitForm = document.querySelector('.form__btn')
 const email = document.querySelector('.form__input input')
 
-const checkValidEmail = (email) => {
+const checkValidEmail = (emailValid) => {
     const regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
-    return regex.test(email)
+    return regex.test(emailValid)
 }
 
 form.addEventListener('submit', (e) => {

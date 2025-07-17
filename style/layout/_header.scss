@@ -7,13 +7,13 @@
     margin-block-end: 1rem;
 }
 
-.nav, .nav__list {
+.nav-header, .nav-header__list {
     display: flex;
     gap: clamp(1rem, .5rem + 3vw , 4rem);
     align-items: center;
 }
 
-.nav__item a {
+.nav-header__item a {
     color: $color-blue;
     text-transform: uppercase;
     font-weight: $weight-500;
@@ -23,7 +23,7 @@
     }
 }
 
-.menu, .close, .logo--mobile, .social, .nav__social {
+.menu, .close, .logo--mobile, .social, .nav-header__social {
     display: none;
 }
 
@@ -32,7 +32,7 @@
         display: block;
     }
 
-    .nav {
+    .nav-header {
         position: fixed;
         flex-direction: column;
         top: 0;
