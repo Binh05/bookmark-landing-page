@@ -154,7 +154,12 @@
 
         &__img {
             margin-block-end: 5rem;
+            padding-inline-end: 0;
         }
+    }
+
+    .btn-group button {
+        margin-block-end: 1rem;
     }
 
     .features {
